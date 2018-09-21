@@ -1,0 +1,6 @@
+http://lbsyun.baidu.com/index.php?title=jspopular3.0/guide/geolocation
+		百度地图的API
+http://lbsyun.baidu.com/apiconsole/key		-----百度地图应用平台
+cInWIndz5FQik8edio7aqpyqr8As6rOu		-----访问ak
+11491092					-----应用编号
+lk_gxl					-----应用名称

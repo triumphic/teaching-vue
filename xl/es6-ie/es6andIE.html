@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			使用babel让es6兼容ie
+		</div>
+	</body>
+</html>
+<script src="node_modules/babel-core/browser.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/babel">
+	'use strict'
+	const Name = "李恺"
+	alert(Name)
+	const arr1 = [1,2,3]
+	const arr2 = [...arr1,4,5]
+	alert(arr2)
+	var html = `数组为${arr2}`
+	document.getElementById("box").innerHTML = html
+</script>

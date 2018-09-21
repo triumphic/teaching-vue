@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="lists"></div>
+	</body>
+</html>
+<script src="jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var data = [
+		{
+			name: 'AAA',
+			child: [
+				{
+					name: 'a1',
+					child: [{name: 'a1-1'},{name: 'a1-2'}]
+				},
+				{
+					name: 'a2',
+					child: [{name: 'a2-1'},{name: 'a2-2'}]
+				},
+				{
+					name: 'a3',
+					child: [{name: 'a3-1'},{name: 'a3-2',child: [{name: 'a3-3-1'},{name: 'a3-3-2'}]}]
+				}
+			]
+		},
+		{
+			name: 'BBB',
+			child: [
+				{name: 'b1'},
+				{name: 'b2',child:[{name: 'b2-1'}]},
+				{name: 'b3'}
+			]
+		},
+		{
+			name: 'CCC',
+			child: [
+				{
+					name: 'c1'
+				},{
+					name: 'c2'
+				},{
+					name: 'c3'
+				}
+			]
+		}
+	]
+	var lists = $(".lists")
+	function build( element, arr ){
+		var strUl = $("<ul></ul>")
+		for( var i = 0 ; i < arr.length ; i++ ){
+			var strLi = $("<li>"+arr[i].name+"</li>")
+			strLi.appendTo(strUl)
+			if(arr[i].child){
+				build( strLi, arr[i].child )
+			}
+		}
+		element.append(strUl)
+	}
+	build( lists, data )
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function calculate(num1,operator,num2){
+    const decimalLength1=num1.toString().split(".")[1]?num1.toString().split(".")[1].length:0,
+        decimalLength2=num2.toString().split(".")[1]?num2.toString().split(".")[1].length:0,
+        exponent=Math.max(decimalLength1, decimalLength2),
+        intA=Math.floor(num1+'e'+exponent),
+        intB=Math.floor(num2+'e'+exponent);
+  
+    switch(operator){
+        case '+':
+            return Number((intA + intB )+'e-'+exponent);
+        case '-':
+            return Number((intA - intB )+'e-'+exponent);
+        case '/':
+            return Number(intA / intB );
+        case '*':
+            return Number((intA * intB )+'e-'+(exponent*2));
+        default:
+            return undefined
+    }
+}
+document.write(calculate(136.22, '*', 6))
+console.log(calculate(136.22, '*', 6))
+</script>
